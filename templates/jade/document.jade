@@ -17,6 +17,8 @@ html(lang=node.document.$attr("lang", "en") )
     else
       link(rel='stylesheet',href='#{revealjsdir}/css/theme/#{node.$attr("revealjs_theme", "black")}.css',id='theme')
     link(href="#{revealjsdir}/lib/css/zenburn.css",rel="stylesheet")
+    if node.$attr("customcss", false)
+      link(rel='stylesheet',href="#{node.$attr('customcss')}",id='customcss')
     script(src = "http://getfirebug.com/firebug-lite.js#startOpened=false")
     script(type='text/javascript').
       document.write('<link rel="stylesheet" href="#{revealjsdir}/css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
